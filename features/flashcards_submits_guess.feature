@@ -12,8 +12,8 @@ Feature: player submits guess
 
     Scenarios: no match
       | name | guess | result   |
-      | dog  | wolf  | wrong    |
-      | cat  | tiger | wrong    |
+      | dog  | wolf  | incorrect|
+      | cat  | tiger | incorrect|
 
     Scenarios: match
       | name | guess | result   |
