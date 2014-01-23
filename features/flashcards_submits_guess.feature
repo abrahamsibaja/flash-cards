@@ -12,10 +12,10 @@ Feature: player submits guess
 
     Scenarios: no match
       | name  | guess | result   |
-      | perro | wolf  | Incorrect|
-      | gato  | tiger | Incorrect|
+      | dog   | wolf  | Incorrect|
+      | cat   | tiger | Incorrect|
 
     Scenarios: match
       | name  | guess | result   |
-      | perro | dog   | Correct  |
-      | gato  | cat   | Correct  |
+      | dog   | dog   | Correct  |
+      | cat   | cat   | Correct  |
