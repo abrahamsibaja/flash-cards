@@ -8,4 +8,3 @@ Feature: flash-cards starts game
     Given I am not yet playing
     When I start a new game
     Then I should see "Welcome to Flash Cards!"
-    And I should see "The word in spanish is:"

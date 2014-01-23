@@ -18,7 +18,7 @@ end
 
 When(/^I start a new game$/) do
   game = Flashcards::Game.new(output)
-  game.start
+  game.game_intro
 end
 
 Then(/^I should see "([^"]*)"$/) do |message|
@@ -26,13 +26,16 @@ Then(/^I should see "([^"]*)"$/) do |message|
 end
 
 #submits_guess
-Given(/^the name of the card is "(.*?)"$/) do |arg1|
+Given(/^the name of the card is "(.*?)"$/) do |name|
+  @game = Flashcards::Game.new(output)
+  @game.deck.take_a_card(name)
 end
 
-When(/^I guess "(.*?)"$/) do |arg1|
+When(/^I guess "(.*?)"$/) do |guess|
+  @game.deck.compare_cards_name(guess)
+  @game.show_result
 end
 
-Then(/^the resuld should be "(.*?)"$/) do |arg1|
+Then(/^the result should be "(.*?)"$/) do |result|
+  output.messages.should include(result)
 end
-
-

@@ -8,14 +8,14 @@ Feature: player submits guess
   Scenario Outline: submit matches
     Given the name of the card is "<name>"
     When I guess "<guess>"
-    Then the resuld should be "<result>"
+    Then the result should be "<result>"
 
     Scenarios: no match
-      | name | guess | result   |
-      | dog  | wolf  | incorrect|
-      | cat  | tiger | incorrect|
+      | name  | guess | result   |
+      | perro | wolf  | Incorrect|
+      | gato  | tiger | Incorrect|
 
     Scenarios: match
-      | name | guess | result   |
-      | dog  | dog   | correct  |
-      | cat  | cat   | correct  |
+      | name  | guess | result   |
+      | perro | dog   | Correct  |
+      | gato  | cat   | Correct  |
