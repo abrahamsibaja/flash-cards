@@ -1,3 +1,4 @@
+system('clear')
 class Output
   def messages
     @messages ||= []
@@ -28,11 +29,11 @@ end
 #submits_guess
 Given(/^the name of the card is "(.*?)"$/) do |name|
   @game = Flashcards::Game.new(output)
-  @game.deck.take_a_card(name)
+  @game.deck.take_a_random_card until deck.card[:english] == name
 end
 
 When(/^I guess "(.*?)"$/) do |guess|
-  @game.deck.compare_cards_name(guess)
+  @game.check_answer(guess)
   @game.show_result
 end
 

@@ -1,1 +1,2 @@
+system('clear')
 require 'flashcards'

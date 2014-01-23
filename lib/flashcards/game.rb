@@ -29,34 +29,13 @@ module Flashcards
       @guess = gets.chop
     end
 
+    def check_answer(guess)
+      puts deck.card
+      @result = deck.card[:english] == guess ? "Correct":"Incorrect"
+    end
+
     def show_result
-      @output.puts deck.result
-    end
-
-  end
-
-  class Deck
-    attr_reader :deck, :card, :result
-    def initialize
-      @deck = [Card.new('dog','perro'), Card.new('cat','gato')]
-    end
-
-    def take_a_random_card
-      @card = deck.sample
-    end
-    
-    def take_a_card(english_name)
-      @card = deck.find{|card| card[:spanish] == english_name}
-    end
-
-    def compare_cards_name(guess)
-      @result = card.english == guess ? "Correct":"Incorrect"
+      @output.puts @result
     end
   end
-
-  Card = Struct.new(:english, :spanish)
 end
-
-system('clear')
-game = Flashcards::Game.new(STDOUT)
-game.start
