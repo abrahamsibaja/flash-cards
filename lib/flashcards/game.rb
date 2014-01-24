@@ -7,7 +7,7 @@ module Flashcards
     end
 
     def check_guess(guess)
-      @guess_result = deck.card[:english] == guess ? 'Correct':'Incorrect'
+      @guess_result = deck.card[:english] == guess.downcase ? 'Correct':'Incorrect'
       @score += 1 if guess_result == 'Correct'
     end
   end
