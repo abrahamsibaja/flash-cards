@@ -14,13 +14,13 @@ module Flashcards
     describe "check answer" do
       it "correct answer" do
         output.should_receive(:puts).with("Correct")
-        game.check_answer('dog')
+        game.check_guess('dog')
         display.show_result
       end
 
       it "incorrect answer" do
         output.should_receive(:puts).with("Incorrect")
-        game.check_answer('cat')
+        game.check_guess('cat')
         display.show_result
       end
     end

@@ -2,7 +2,16 @@ module Flashcards
   class Deck
     attr_reader :deck, :card
     def initialize
-      @deck = [Card.new('dog','perro'), Card.new('cat','gato')]
+      @deck = [
+               Card.new('dog', 'perro'), 
+               Card.new('cat', 'gato'),
+               Card.new('tiger', 'tigre'),
+               Card.new('wolf', 'lobo'),
+               Card.new('cow', 'vaca'),
+               Card.new('horse', 'caballo'),
+               Card.new('elephant', 'elefante'),
+               Card.new('gen', 'gallina')
+      ]
     end
 
     Card = Struct.new(:english, :spanish)

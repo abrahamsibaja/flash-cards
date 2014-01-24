@@ -33,7 +33,7 @@ Given(/^the name of the card is "(.*?)"$/) do |name|
 end
 
 When(/^I guess "(.*?)"$/) do |guess|
-  @display.game.check_answer(guess)
+  @display.game.check_guess(guess)
   @display.show_result
 end
 

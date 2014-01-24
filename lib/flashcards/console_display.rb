@@ -11,7 +11,6 @@ module Flashcards
       game.deck.take_a_random_card
       show_card
       enter_guess
-      deck.compare_cards_name(@guess)
       show_result
     end
 
@@ -26,7 +25,8 @@ module Flashcards
 
     def enter_guess
       @output.puts "Enter your guess in english:"
-      @guess = gets.chop
+      guess = gets.chop
+      game.check_guess(guess)
     end
 
     def show_result

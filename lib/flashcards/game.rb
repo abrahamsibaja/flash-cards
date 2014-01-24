@@ -5,7 +5,7 @@ module Flashcards
       @deck = Deck.new
     end
 
-    def check_answer(guess)
+    def check_guess(guess)
       @result = deck.card[:english] == guess ? 'Correct':'Incorrect'
     end
   end
