@@ -1,5 +1,7 @@
 module Flashcards
   class Console_display
+    NUMBER_OF_CARDS = 3
+
     attr_reader :game
     def initialize(output)
       @output = output
@@ -8,7 +10,7 @@ module Flashcards
 
     def start
       game_intro
-      (1..3).each do
+      (1..NUMBER_OF_CARDS).each do
         game.deck.take_a_random_card
         show_card
         enter_guess
@@ -37,7 +39,7 @@ module Flashcards
     end
 
     def show_game_score
-      @output.puts "\nYou achieved #{game.score}/3 words"
+      @output.puts "\nYou achieved #{game.score}/#{NUMBER_OF_CARDS} words"
     end
   end
 end
