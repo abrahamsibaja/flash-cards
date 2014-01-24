@@ -8,10 +8,12 @@ module Flashcards
 
     def start
       game_intro
-      game.deck.take_a_random_card
-      show_card
-      enter_guess
-      show_result
+      (1..5).each do
+        game.deck.take_a_random_card
+        show_card
+        enter_guess
+        show_result
+      end
     end
 
     def game_intro

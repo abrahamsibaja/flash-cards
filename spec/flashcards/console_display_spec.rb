@@ -11,14 +11,14 @@ module Flashcards
       deck.take_a_card('dog')
     end
 
-    describe "check answer" do
-      it "correct answer" do
+    describe "check guess" do
+      it "verifies the guess is correct" do
         output.should_receive(:puts).with("Correct")
         game.check_guess('dog')
         display.show_result
       end
 
-      it "incorrect answer" do
+      it "verifies the guess is incorrect" do
         output.should_receive(:puts).with("Incorrect")
         game.check_guess('cat')
         display.show_result

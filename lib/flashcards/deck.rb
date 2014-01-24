@@ -14,14 +14,22 @@ module Flashcards
       ]
     end
 
-    Card = Struct.new(:english, :spanish)
-
     def take_a_random_card
       @card = deck.sample
+      delete_card_from_deck
     end
 
     def take_a_card(english_name)
       @card = deck.find{|c| c[:english] == english_name}
+      delete_card_from_deck
+    end
+
+    private
+
+    Card = Struct.new(:english, :spanish)
+
+    def delete_card_from_deck
+      deck.delete_if{|d| d[:english] == card[:english]}
     end
   end
 end
