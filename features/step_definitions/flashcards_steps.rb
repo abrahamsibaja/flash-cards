@@ -34,7 +34,7 @@ end
 
 When(/^I guess "(.*?)"$/) do |guess|
   @display.game.check_guess(guess)
-  @display.show_result
+  @display.show_guess_result
 end
 
 Then(/^the result should be "(.*?)"$/) do |result|
