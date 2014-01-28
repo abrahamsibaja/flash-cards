@@ -14,13 +14,12 @@ module Flashcards
       ]
     end
 
-    def take_a_random_card
-      @card = deck.sample
-      delete_card_from_deck
-    end
-
-    def take_a_card(english_name)
-      @card = deck.find{|c| c[:english] == english_name}
+    def take_a_card(*english_name)
+      if english_name.length == 0 
+        @card = deck.sample 
+      else
+        @card = deck.find{|c| c[:english] == english_name.first}
+      end
       delete_card_from_deck
     end
 

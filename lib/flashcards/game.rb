@@ -1,14 +1,17 @@
 module Flashcards
   class Game
-    attr_reader :deck, :guess_result, :score
+    attr_reader :deck, :score
     def initialize
       @deck = Deck.new
       @score = 0
     end
 
-    def check_guess(guess)
-      @guess_result = deck.card[:english] == guess.downcase ? 'Correct':'Incorrect'
-      @score += 1 if guess_result == 'Correct'
+    def correct_guess?(guess)
+      deck.card[:english] == guess.downcase
+    end
+
+    def score_success
+      @score += 1
     end
   end
 end
