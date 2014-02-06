@@ -3,5 +3,5 @@ $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'flashcards'
 
 system('clear')
-display = Flashcards::Console_display.new(STDOUT)
+display = Flashcards::ConsoleDisplay.new(STDOUT)
 display.start

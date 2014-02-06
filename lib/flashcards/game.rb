@@ -10,7 +10,7 @@ module Flashcards
       deck.card[:english] == guess.downcase
     end
 
-    def score_success
+    def increase_score
       @score += 1
     end
   end

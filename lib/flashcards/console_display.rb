@@ -1,5 +1,5 @@
 module Flashcards
-  class Console_display
+  class ConsoleDisplay
     NUMBER_OF_CARDS = 3
 
     attr_reader :game
@@ -39,7 +39,7 @@ module Flashcards
     def guess_process(guess)
       if game.correct_guess?(guess)
         @output.puts 'Correct'
-        game.score_success
+        game.increase_score
       else
         @output.puts 'Incorrect'
       end
